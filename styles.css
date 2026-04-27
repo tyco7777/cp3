@@ -1,100 +1,248 @@
 /* ====================================================
-   Section Grouping / Dividers
+   CBU AI Page Styles
+   Cleaned CSS with section dividers / background grouping
    ==================================================== */
-.section-group {
-  background-color: #f5f7fa;
-  border-top: 1px solid #e1e6ef;
-  border-bottom: 1px solid #e1e6ef;
-  padding: 2.5rem 0;
-  margin: 2.5rem 0;
-}
 
-.section-group .cbu-section {
-  margin-bottom: 0;
+:root {
+  --cbu-blue: #002f5f;
+  --cbu-maroon: #6f263d;
+  --cbu-gold: #f2a900;
+  --cbu-gold-light: #ffc845;
+  --text-main: #1a1a1a;
+  --text-muted: #555;
+  --border-light: #e1e6ef;
+  --border-mid: #d1d5da;
+  --bg-page: #ffffff;
+  --bg-soft: #f8f9fb;
+  --bg-group: #f5f7fa;
 }
-``
 
 /* ================= GLOBAL ================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  color: #1a1a1a;
+  color: var(--text-main);
+  background: var(--bg-page);
 }
 
 a {
-  color: #002f5f;
+  color: var(--cbu-blue);
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:focus {
   text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ================= HEADER NAV ================= */
+.cbu-header {
+  background: #ffffff;
+  border-bottom: 3px solid var(--cbu-blue);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.cbu-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.cbu-logo-wrapper,
+.cbu-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cbu-logo {
+  height: 40px;
+  width: auto;
+}
+
+.cbu-site-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--cbu-blue);
+}
+
+.cbu-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cbu-nav a {
+  font-weight: 600;
+  color: var(--cbu-blue);
 }
 
 /* ================= HERO ================= */
 .cbu-hero {
-  background: linear-gradient(135deg, #002f5f, #6f263d);
-  color: white;
+  background: linear-gradient(135deg, var(--cbu-blue), var(--cbu-maroon));
+  color: #ffffff;
   padding: 4rem 2rem;
   text-align: center;
 }
 
+.cbu-hero-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .cbu-hero h1 {
-  font-size: 2.6rem;
-  margin-bottom: 1rem;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  margin: 0 0 1rem;
 }
 
 .cbu-hero p {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin: 0 auto 1.25rem;
+  max-width: 900px;
 }
 
-/* ================= OVERVIEW ================= */
+.hero-sub {
+  margin-top: 1.5rem;
+}
 
-.cbu-overview {
-  background: #f8f9fb;
-  border-left: 6px solid #002f5f;
+/* ================= SECTION GROUPING / DIVIDERS ================= */
+.section-group {
+  background-color: var(--bg-group);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 3rem 0;
+  margin: 3rem 0;
+}
+
+.section-group:first-child {
+  margin-top: 0;
+}
+
+.section-group .cbu-section {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.section-group .cbu-section + .cbu-section {
+  margin-top: 2rem;
+}
+
+.section-group-title {
+  max-width: 1100px;
+  margin: 0 auto 1.5rem;
+  padding: 0 2rem;
+}
+
+.section-group-title h2 {
+  margin: 0;
+  color: var(--cbu-blue);
+  font-size: 1.6rem;
+}
+
+/* ================= SECTIONS ================= */
+.cbu-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.cbu-section h2 {
+  margin-top: 0;
+  color: var(--cbu-blue);
+}
+
+.cbu-section h3 {
+  color: var(--cbu-blue);
+  margin-top: 2rem;
+}
+
+.cbu-overview,
+.cbu-highlight {
+  background: var(--bg-soft);
+  border-left: 6px solid var(--cbu-blue);
 }
 
 .cbu-overview h2 {
   margin-top: 0;
 }
-``
 
-/* ================= WHY IT MATTERS ================= */
-
-.cbu-why-it-matters {
+.cbu-why-it-matters,
+.cbu-awareness,
+.cbu-policy,
+.cbu-oversight,
+.cbu-approved-tools {
   background: #ffffff;
 }
 
-.why-list {
+.cbu-opportunities,
+.cbu-training {
+  background: var(--bg-soft);
+}
+
+.cbu-policy {
+  border-top: 2px solid #e1e4e8;
+}
+
+.cbu-oversight p,
+.cbu-use-cases .use-case-intro,
+.cbu-use-cases .use-case-summary {
+  max-width: 950px;
+}
+
+/* ================= LISTS ================= */
+.why-list,
+.opportunities-list,
+.awareness-list,
+.policy-list,
+.training-list,
+.review-list {
   padding-left: 1.2rem;
 }
 
-.why-list li {
+.why-list li,
+.opportunities-list li,
+.awareness-list li,
+.policy-list li,
+.training-list li,
+.review-list li {
   margin-bottom: 1rem;
 }
 
-
-/* ================= OPPORTUNITIES ================= */
-
-.cbu-opportunities {
-  background: #f8f9fb;
+.awareness-check {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: var(--bg-soft);
+  border-left: 4px solid var(--cbu-blue);
 }
-
-.opportunities-list li {
-  margin-bottom: 1rem;
-}
-
 
 /* ================= AI USE CASE HIGHLIGHTS ================= */
-
-.cbu-use-cases .use-case-intro,
-.cbu-use-cases .use-case-summary {
-  max-width: 900px;
-  margin-bottom: 1.5rem;
-}
-
 .use-case-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -117,73 +265,11 @@ a:hover {
 .use-case-note {
   margin-top: 1rem;
   font-size: 0.95rem;
-  color: #555;
+  color: var(--text-muted);
   font-style: italic;
 }
 
-
-/* ================= AWARENESS ================= */
-
-.cbu-awareness {
-  background: #ffffff;
-}
-
-.awareness-list li {
-  margin-bottom: 1rem;
-}
-
-.awareness-check {
-  margin-top: 1.5rem;
-  padding: 1.25rem;
-  background: #f8f9fb;
-  border-left: 4px solid #002f5f;
-}
-
-/* ================= POLICY ================= */
-
-.cbu-policy {
-  background: #ffffff;
-  border-top: 2px solid #e1e4e8;
-}
-
-.policy-list li {
-  margin-bottom: 1rem;
-}
-
-
-/* ================= AI OVERSIGHT COMMITTEE ================= */
-
-.cbu-oversight {
-  background: #ffffff;
-}
-
-.cbu-oversight p {
-  max-width: 950px;
-}
-
-/* ================= TRAINING ================= */
-
-.cbu-training {
-  background: #f8f9fb;
-}
-
-.training-list li {
-  margin-bottom: 1.25rem;
-}
-
-/* ================= APPROVED TOOLS / IT REVIEW ================= */
-
-.cbu-approved-tools {
-  background: #ffffff;
-}
-
-.review-list li {
-  margin-bottom: 1rem;
-}
-
-
-/* ================= AI TOOLS DATA TABLE ================= */
-
+/* ================= TABLES ================= */
 .ai-tools-table {
   width: 100%;
   border-collapse: collapse;
@@ -203,11 +289,17 @@ a:hover {
   border: 1px solid #e1e4e8;
   padding: 0.75rem;
   text-align: center;
+  vertical-align: top;
+}
+
+.ai-tools-table th:first-child,
+.ai-tools-table td:first-child,
+.ai-tools-table th[scope="row"] {
+  text-align: left;
 }
 
 .ai-tools-table th[scope="row"] {
-  text-align: left;
-  background: #f8f9fb;
+  background: var(--bg-soft);
 }
 
 .ai-tools-table thead th {
@@ -215,86 +307,185 @@ a:hover {
   font-weight: 600;
 }
 
-/* ================= BUTTON ================= */
-.cbu-button {
-  background: #f2a900;
-  color: #002f5f;
-  padding: 12px 24px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 6px;
-  display: inline-block;
-}
-
-.cbu-button:hover {
-  background: #ffc845;
-}
-
-/* ================= SECTIONS ================= */
-.cbu-section {
-  padding: 3rem 2rem;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.cbu-section h2 {
-  margin-top: 0;
-  color: #002f5f;
-}
-
-/* ================= ICON GRID ================= */
-.cbu-icon-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
+/* ================= FORMS ================= */
+.cbu-form {
   margin-top: 2rem;
 }
 
-.icon-card {
-  border: 1px solid #ddd;
-  padding: 1.5rem;
+.cbu-form fieldset {
+  border: 1px solid var(--border-light);
   border-radius: 8px;
-  background: #f9f9f9;
+  padding: 1.25rem;
+  margin: 0 0 1.5rem;
+  background: #ffffff;
 }
 
-.icon-card h3 {
+.cbu-form legend {
+  font-weight: 700;
+  color: var(--cbu-blue);
+  padding: 0 0.5rem;
+}
+
+.cbu-form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.cbu-form label label {
+  display: inline;
+  font-weight: 400;
+}
+
+.cbu-form input[type="text"],
+.cbu-form input[type="email"],
+.cbu-form textarea,
+.cbu-form select {
+  width: 100%;
+  max-width: 700px;
+  padding: 0.7rem;
+  border: 1px solid var(--border-mid);
+  border-radius: 6px;
+  font: inherit;
+}
+
+.cbu-form textarea {
+  resize: vertical;
+}
+
+.cbu-form button,
+.cbu-button {
+  background: var(--cbu-gold);
+  color: var(--cbu-blue);
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cbu-form button:hover,
+.cbu-form button:focus,
+.cbu-button:hover,
+.cbu-button:focus {
+  background: var(--cbu-gold-light);
+  text-decoration: none;
+}
+
+.form-note {
+  margin-top: 1.5rem;
+  color: var(--text-muted);
+}
+
+/* ================= ICON / CARD GRIDS ================= */
+.cbu-icon-grid,
+.quick-links-grid,
+.footer-links-grid,
+.contact-grid,
+.use-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.cbu-icon-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 2rem;
+}
+
+.quick-links-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 1.5rem;
+}
+
+.footer-links-grid,
+.contact-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.use-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin: 2rem 0;
+}
+
+.icon-card,
+.use-card,
+.quick-link-card,
+.contact-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: #ffffff;
+}
+
+.icon-card h3,
+.use-card h3,
+.quick-link-card h3,
+.contact-item h4 {
   margin-top: 0;
+}
+
+.quick-link-card {
+  display: block;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.quick-link-card h3,
+.contact-item h4 {
+  color: var(--cbu-blue);
+}
+
+.quick-link-card p,
+.contact-item p {
+  margin-bottom: 0;
+}
+
+.quick-link-card:hover,
+.quick-link-card:focus {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.use-card.allowed {
+  border-left: 6px solid #2e7d32;
+}
+
+.use-card.caution {
+  border-left: 6px solid #f9a825;
+}
+
+.use-card.prohibited {
+  border-left: 6px solid #c62828;
+}
+
+.acceptable-intro {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+.acceptable-footer {
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+
+/* ================= QUICK LINKS / FOOTER LINKS ================= */
+.quick-links ul,
+.footer-links-grid ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.quick-links li,
+.footer-links-grid li {
+  margin-bottom: 0.5rem;
 }
 
 .footer-links-title {
   text-align: center;
 }
-
-.footer-links-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  justify-content: center;
-  text-align: center;
-}
-
-
-.footer-links-heading::after {
-  content: "";
-  display: block;
-  width: 60px;          /* short, subtle line */
-  height: 1px;
-  background-color: #d1d5da;
-  margin: 0.75rem auto 0;
-}
-
-
-/* ================= LAST UPDATED ================= */
-
-.footer-last-updated {
-  text-align: center;
-  margin-top: 1.5rem;
-  font-size: 0.85rem;
-  color: #666;
-  font-style: italic;
-}
-
-
-/* ================= FOOTER QUICK LINKS ================= */
 
 .cbu-footer-links {
   margin-top: 3rem;
@@ -310,48 +501,24 @@ a:hover {
   margin-bottom: 1rem;
   color: #444;
   letter-spacing: 0.05em;
+  text-align: center;
 }
 
-.footer-links-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+.footer-links-heading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background-color: var(--border-mid);
+  margin: 0.75rem auto 0;
 }
 
-.footer-links-grid ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.footer-links-grid li {
-  margin-bottom: 0.5rem;
-}
-
-.footer-links-grid a {
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.footer-links-grid a:hover {
-  text-decoration: underline;
-}
-
-
-/* ================= QUICK LINKS ================= */
-.quick-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.quick-links li {
-  margin-bottom: 0.5rem;
-}
-
-/* ================= HIGHLIGHT SECTION ================= */
-.cbu-highlight {
-  background: #f4f6f8;
-  border-left: 6px solid #002f5f;
+.footer-last-updated {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
 }
 
 /* ================= FOOTER ================= */
@@ -362,147 +529,37 @@ a:hover {
   font-size: 0.9rem;
   margin-top: 3rem;
 }
-/* ================= HEADER NAV ================= */
 
-.cbu-header {
-  background: white;
-  border-bottom: 3px solid #002f5f;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+/* ================= RESPONSIVE ================= */
+@media (max-width: 800px) {
+  .cbu-header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cbu-nav ul {
+    justify-content: flex-start;
+    gap: 0.75rem 1rem;
+  }
+
+  .cbu-hero {
+    padding: 3rem 1.25rem;
+  }
+
+  .cbu-section,
+  .section-group-title {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .section-group {
+    padding: 2rem 0;
+    margin: 2rem 0;
+  }
+
+  .ai-tools-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }
-
-.cbu-header-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Brand / Logo */
-.cbu-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.cbu-logo {
-  height: 40px;
-  width: auto;
-}
-
-.cbu-site-title {
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: #002f5f;
-}
-
-/* Navigation */
-.cbu-nav a {
-  margin-left: 1.5rem;
-  font-weight: 600;
-  color: #002f5f;
-}
-
-.cbu-nav a:hover {
-  text-decoration: underline;
-}
-
-/* ================= ACCEPTABLE USE ================= */
-
-.acceptable-intro {
-  font-size: 1.05rem;
-  margin-bottom: 1rem;
-}
-
-.use-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.use-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1.5rem;
-  background: #ffffff;
-}
-
-.use-card h3 {
-  margin-top: 0;
-}
-
-.use-card.allowed {
-  border-left: 6px solid #2e7d32;
-}
-
-.use-card.caution {
-  border-left: 6px solid #f9a825;
-}
-
-.use-card.prohibited {
-  border-left: 6px solid #c62828;
-}
-
-.acceptable-footer {
-  margin-top: 1.5rem;
-  font-weight: 600;
-}
-
-/* ================= QUICK LINKS (CARDS) ================= */
-
-.quick-links-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.quick-link-card {
-  display: block;
-  padding: 1.5rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background: #ffffff;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.quick-link-card h3 {
-  margin-top: 0;
-  color: #002f5f;
-}
-
-.quick-link-card p {
-  margin-bottom: 0;
-}
-
-.quick-link-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transform: translateY(-2px);
-  text-decoration: none;
-}
-
-/* ====================================================
-   Contact Information Layout
-   ==================================================== */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.25rem;
-}
-
-.contact-item h4 {
-  margin: 0 0 0.25rem 0;
-  color: var(--cbu-blue);
-  font-size: 1rem;
-}
-
-.contact-item p {
-  margin: 0;
-  font-size: 0.95rem;
-}
-``
