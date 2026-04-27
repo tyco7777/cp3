@@ -1,3 +1,19 @@
+/* ====================================================
+   Section Grouping / Dividers
+   ==================================================== */
+.section-group {
+  background-color: #f5f7fa;
+  border-top: 1px solid #e1e6ef;
+  border-bottom: 1px solid #e1e6ef;
+  padding: 2.5rem 0;
+  margin: 2.5rem 0;
+}
+
+.section-group .cbu-section {
+  margin-bottom: 0;
+}
+``
+
 /* ================= GLOBAL ================= */
 body {
   margin: 0;
@@ -468,3 +484,25 @@ a:hover {
   transform: translateY(-2px);
   text-decoration: none;
 }
+
+/* ====================================================
+   Contact Information Layout
+   ==================================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.contact-item h4 {
+  margin: 0 0 0.25rem 0;
+  color: var(--cbu-blue);
+  font-size: 1rem;
+}
+
+.contact-item p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+``
