@@ -1,0 +1,61 @@
+<style>
+.ai-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+.ai-table th, .ai-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+.ai-table th {
+  background-color: #f2f2f2;
+}
+.approved { color: #2e7d32; font-weight: 600; }
+.conditional { color: #f9a825; font-weight: 600; }
+.prohibited { color: #c62828; font-weight: 600; }
+</style>
+
+<table class="ai-table">
+  <thead>
+    <tr>
+      <th>Data Classification</th>
+      <th>Microsoft Copilot (M365)</th>
+      <th>ChatGPT Enterprise / Edu</th>
+      <th>Google Gemini Enterprise</th>
+      <th>Grok (xAI)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Confidential / Regulated</strong><br>(FERPA, HR, Finance, Legal)</td>
+      <td class="approved">APPROVED</td>
+      <td class="conditional">Enterprise Only</td>
+      <td class="conditional">Enterprise Only</td>
+      <td class="prohibited">PROHIBITED</td>
+    </tr>
+    <tr>
+      <td><strong>PII Data</strong><br>(Names, IDs, student numbers)</td>
+      <td class="approved">APPROVED</td>
+      <td class="conditional">Enterprise Only</td>
+      <td class="conditional">Enterprise Only</td>
+      <td class="prohibited">PROHIBITED</td>
+    </tr>
+    <tr>
+      <td><strong>Internal / Sensitive</strong></td>
+      <td class="approved">APPROVED</td>
+      <td class="approved">APPROVED</td>
+      <td class="approved">APPROVED</td>
+      <td class="conditional">DISCOURAGED</td>
+    </tr>
+    <tr>
+      <td><strong>Public / Non‑Sensitive</strong></td>
+      <td class="approved">APPROVED</td>
+      <td class="approved">APPROVED</td>
+      <td class="approved">APPROVED</td>
+      <td class="approved">ALLOWED</td>
+    </tr>
+  </tbody>
+</table>
