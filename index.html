@@ -554,6 +554,100 @@
     AI tools not currently approved must be submitted to
     Information Technology Services for review prior to use.
   </p>
+
+<!-- ================= REQUEST REVIEW ================= -->
+<section class="cbu-section" id="request-review">
+  <h2>Request Review of an AI Tool</h2>
+
+  <p>
+    California Baptist University requires that artificial intelligence (AI) tools
+    used for university‑related work be reviewed and approved by Information
+    Technology Services (ITS) prior to adoption or use.
+  </p>
+
+  <form class="cbu-form"
+        method="post"
+        action="#">
+
+    <fieldset>
+      <legend>Requester Information</legend>
+
+      <label>
+        Name<br />
+        <input type="text" name="requester-name" required />
+      </label>
+
+      <label>
+        Email Address<br />
+        <input type="email" name="requester-email" required />
+      </label>
+
+      <label>
+        Department / Unit<br />
+        <input type="text" name="department" />
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>AI Tool Information</legend>
+
+      <label>
+        Name of AI Tool / Platform<br />
+        <input type="text" name="tool-name" required />
+      </label>
+
+      <label>
+        Vendor / Provider<br />
+        <input type="text" name="vendor" />
+      </label>
+
+      <label>
+        Intended Use Case<br />
+        <textarea name="use-case" rows="4" required></textarea>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Data & Risk Considerations</legend>
+
+      <label>
+        Data Types Involved (select all that apply)<br />
+        <label><input type="checkbox" name="data-type" value="confidential" /> Confidential / Regulated</label><br />
+        <label><input type="checkbox" name="data-type" value="pii" /> PII</label><br />
+        <label><input type="checkbox" name="data-type" value="internal" /> Internal / Sensitive</label><br />
+        <label><input type="checkbox" name="data-type" value="public" /> Public / Non‑Sensitive</label>
+      </label>
+
+      <label>
+        Intended Scope of Use<br />
+        <select name="scope">
+          <option value="">Select one</option>
+          <option value="individual">Individual Use</option>
+          <option value="department">Department / Unit</option>
+          <option value="pilot">Pilot / Evaluation</option>
+          <option value="institution">Institution‑Wide</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Additional Information</legend>
+
+      <label>
+        Additional Comments or Context<br />
+        <textarea name="comments" rows="4"></textarea>
+      </label>
+    </fieldset>
+
+    <button type="submit">Submit Request for Review</button>
+
+  </form>
+
+  <p class="form-note">
+    ITS will review submissions and provide guidance on next steps,
+    including any required security, privacy, or risk assessment.
+  </p>
+
 </section>
 
 <section class="cbu-section" id="contact">
@@ -561,6 +655,11 @@
   <p>
     For questions related to AI tools, policy, or training,
     contact Information Technology Services.
+Support Email: helpdesk@calbaptist.edu
+Open Support Ticket: calbaptist.freshservice.com/support/home
+Phone: (951) 343-4444
+Hours: Monday-Friday 8 a.m. to 8 p.m., Saturday 8 a.m. to 4 p.m.
+
   </p>
 </section>
 
